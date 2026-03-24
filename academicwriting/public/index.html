@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AcademicWriting — Professional Academic Writing Services India</title>
+<meta name="description" content="Expert thesis, dissertation, research paper, and presentation writing services. Low plagiarism guaranteed. UPI payments accepted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   DESIGN SYSTEM
+════════════════════════════════════════ */
+:root {
+  --navy:    #0B1936;
+  --navy2:   #152349;
+  --blue:    #1D3A8A;
+  --gold:    #C4883A;
+  --gold2:   #E6B558;
+  --gold3:   #FDD07A;
+  --cream:   #F8F4EC;
+  --white:   #FFFFFF;
+  --muted:   #617090;
+  --light:   #EBF0FA;
+  --green:   #047857;
+  --border:  rgba(11,25,54,0.09);
+  --r:       14px;
+  --sh:      0 4px 28px rgba(11,25,54,0.10);
+  --sh2:     0 16px 56px rgba(11,25,54,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);background:var(--cream);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px;}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+#nav {
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:66px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+  background:rgba(11,25,54,0.97);
+  backdrop-filter:blur(16px);
+  border-bottom:1.5px solid rgba(196,136,58,0.25);
+  transition:box-shadow .3s;
+}
+#nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,0.35);}
+.brand{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:-.3px;}
+.brand em{color:var(--gold2);font-style:normal;}
+.nav-links{display:flex;gap:6px;align-items:center;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.72);font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:8px;transition:.2s;white-space:nowrap;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2))!important;color:var(--navy)!important;font-weight:700!important;padding:8px 20px!important;}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+#mobileMenu{
+  display:none;position:fixed;top:66px;left:0;right:0;
+  background:var(--navy);z-index:999;
+  padding:20px 5% 24px;
+  border-bottom:2px solid rgba(196,136,58,0.25);
+  flex-direction:column;gap:4px;
+}
+#mobileMenu.open{display:flex;}
+#mobileMenu a{color:rgba(255,255,255,0.8);font-size:15px;font-weight:500;padding:11px 14px;border-radius:10px;transition:.2s;}
+#mobileMenu a:hover{background:rgba(255,255,255,0.07);color:#fff;}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#hero {
+  min-height:100vh;padding:110px 5% 70px;
+  background:linear-gradient(148deg, var(--navy) 0%, var(--navy2) 45%, var(--blue) 100%);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+}
+.hero-orb1{position:absolute;top:-140px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(196,136,58,.18) 0%,transparent 65%);}
+.hero-orb2{position:absolute;bottom:-180px;left:-130px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(29,58,138,.35) 0%,transparent 65%);}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;}
+.hero-inner{position:relative;z-index:2;max-width:720px;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(196,136,58,.15);border:1px solid rgba(196,136,58,.45);
+  border-radius:50px;padding:6px 18px;
+  font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;
+  color:var(--gold3);font-weight:600;margin-bottom:26px;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,5.5vw,70px);font-weight:700;
+  color:#fff;line-height:1.08;margin-bottom:22px;
+  letter-spacing:-.5px;
+}
+.hero h1 em{color:var(--gold2);font-style:italic;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;max-width:540px;margin-bottom:38px;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;font-weight:600;font-size:15px;padding:13px 28px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;transition:.25s;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(196,136,58,.45);}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:52px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);}
+.hstat-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--gold2);line-height:1;}
+.hstat-label{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:4px;}
+
+/* ════════════════════════════════════════
+   SECTIONS COMMON
+════════════════════════════════════════ */
+.sec{padding:86px 5%;}
+.sec-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:12px;}
+.sec-bar{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;margin-bottom:16px;}
+.sec-sub{font-size:15.5px;color:var(--muted);line-height:1.72;max-width:560px;margin-bottom:44px;}
+.tc{text-align:center;}
+.tc .sec-bar{margin-left:auto;margin-right:auto;}
+.tc .sec-sub{margin-left:auto;margin-right:auto;}
+
+/* ════════════════════════════════════════
+   SERVICES
+════════════════════════════════════════ */
+#services{background:#fff;}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;}
+.svc-card{
+  background:var(--cream);border-radius:var(--r);
+  padding:28px 26px 24px;
+  border:1.5px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.svc-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--navy),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:.3s;
+}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--sh2);}
+.svc-card:hover::after{transform:scaleX(1);}
+.svc-icon{font-size:30px;margin-bottom:14px;}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.svc-desc{font-size:13.5px;color:var(--muted);line-height:1.68;margin-bottom:16px;}
+.svc-price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--gold);}
+.svc-price sup{font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;}
+.svc-note{font-size:11.5px;color:var(--muted);margin-top:4px;}
+
+/* ════════════════════════════════════════
+   PRICING TABLE
+════════════════════════════════════════ */
+#pricing{background:linear-gradient(180deg,var(--cream),var(--light));}
+.ptable{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;box-shadow:var(--sh);}
+.ptable thead tr{background:var(--navy);}
+.ptable th{padding:15px 20px;text-align:left;color:var(--gold2);font-size:12.5px;font-weight:700;letter-spacing:.5px;}
+.ptable tbody tr{border-bottom:1px solid var(--border);transition:.2s;}
+.ptable tbody tr:last-child{border-bottom:none;}
+.ptable tbody tr:hover{background:#f0f4ff;}
+.ptable td{padding:14px 20px;font-size:14px;background:#fff;}
+.ptable td:last-child{font-weight:700;color:var(--navy);text-align:right;}
+.ptable td:nth-child(3){color:var(--muted);font-size:13px;}
+.pbadge{display:inline-block;background:var(--gold);color:var(--navy);font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:50px;letter-spacing:.8px;text-transform:uppercase;margin-left:7px;vertical-align:middle;}
+.gold-price{color:var(--gold)!important;}
+
+/* ════════════════════════════════════════
+   WHY US
+════════════════════════════════════════ */
+#why{background:#fff;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+.why-card{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--cream);border-radius:var(--r);
+  padding:22px 20px;border:1.5px solid var(--border);
+  transition:.25s;
+}
+.why-card:hover{transform:translateY(-3px);box-shadow:var(--sh);}
+.why-icon{width:46px;height:46px;border-radius:11px;background:rgba(11,25,54,.06);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.why-text h4{font-weight:700;font-size:14.5px;color:var(--navy);margin-bottom:5px;}
+.why-text p{font-size:13px;color:var(--muted);line-height:1.62;}
+
+/* ════════════════════════════════════════
+   PROCESS
+════════════════════════════════════════ */
+#process{background:linear-gradient(148deg,var(--navy),var(--blue));}
+#process .sec-label{color:var(--gold3);}
+#process .sec-title{color:#fff;}
+#process .sec-sub{color:rgba(255,255,255,.62);}
+.proc-row{display:flex;gap:0;position:relative;flex-wrap:wrap;}
+.proc-connector{position:absolute;top:46px;left:80px;right:80px;height:2px;background:rgba(196,136,58,.25);z-index:0;}
+.proc-step{flex:1;min-width:160px;text-align:center;position:relative;z-index:1;padding:0 12px 0;}
+.proc-num{
+  width:92px;height:92px;border-radius:50%;margin:0 auto 18px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--navy);
+  box-shadow:0 8px 28px rgba(196,136,58,.4);
+}
+.proc-title{font-weight:700;font-size:14.5px;color:#fff;margin-bottom:6px;}
+.proc-desc{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6;}
+
+/* ════════════════════════════════════════
+   PAYMENT / UPI
+════════════════════════════════════════ */
+#payment{background:#fff;}
+.pay-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start;}
+.pay-info h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--navy);margin-bottom:12px;}
+.pay-info p{font-size:15px;color:var(--muted);line-height:1.72;margin-bottom:22px;}
+.upi-box{
+  background:var(--cream);border:2px solid var(--gold);border-radius:14px;
+  padding:20px 22px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;margin-bottom:22px;
+}
+.upi-box-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.upi-box-id{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);}
+.copy-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--navy);color:#fff;border:none;border-radius:9px;
+  padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;transition:.2s;
+}
+.copy-btn:hover{background:var(--blue);}
+.pay-steps{list-style:none;margin-bottom:20px;}
+.pay-steps li{font-size:14px;color:var(--muted);padding:9px 0 9px 36px;position:relative;border-bottom:1px solid var(--border);}
+.pay-steps li:last-child{border-bottom:none;}
+.pay-steps li::before{
+  content:attr(data-n);position:absolute;left:0;top:9px;
+  width:24px;height:24px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);font-weight:800;font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.qr-panel{text-align:center;}
+.qr-card{
+  display:inline-block;background:var(--cream);
+  border-radius:18px;padding:32px 28px;
+  border:2px solid var(--border);box-shadow:var(--sh2);
+}
+.qr-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.qr-card p{font-size:13px;color:var(--muted);margin-bottom:20px;}
+#qr-img{width:200px;height:200px;border-radius:12px;border:4px solid #fff;box-shadow:var(--sh);display:block;margin:0 auto;}
+#qr-loader{width:200px;height:200px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:13px;color:var(--muted);}
+.upi-apps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+.upi-app{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--navy);}
+
+/* ════════════════════════════════════════
+   ORDER FORM
+════════════════════════════════════════ */
+#order{background:linear-gradient(180deg,var(--cream),var(--light));}
+.form-card{background:#fff;border-radius:20px;padding:44px;box-shadow:var(--sh2);max-width:820px;margin:0 auto;}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.f{display:flex;flex-direction:column;gap:6px;}
+.f.full{grid-column:1/-1;}
+.f label{font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:.2px;}
+.f input,.f select,.f textarea{
+  border:1.5px solid rgba(11,25,54,.14);border-radius:10px;
+  padding:12px 15px;font-size:14px;
+  font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);
+  background:#fafbfd;outline:none;transition:.2s;
+}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(196,136,58,.12);}
+.f textarea{resize:vertical;min-height:96px;}
+.form-btn{
+  width:100%;margin-top:10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:var(--navy);border:none;border-radius:11px;
+  padding:15px;font-size:16px;font-weight:700;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;transition:.25s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.form-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(196,136,58,.4);}
+.form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.form-success{
+  display:none;text-align:center;padding:36px 28px;
+  background:rgba(4,120,87,.06);border-radius:14px;
+  border:2px solid rgba(4,120,87,.2);margin-top:22px;
+}
+.form-success .fs-icon{font-size:48px;margin-bottom:14px;}
+.form-success h4{color:var(--green);font-size:22px;font-weight:700;margin-bottom:8px;font-family:'Cormorant Garamond',serif;}
+.form-success p{color:var(--muted);font-size:14px;line-height:1.65;}
+.form-error{
+  display:none;text-align:center;padding:14px 20px;
+  background:rgba(220,38,38,.06);border-radius:10px;
+  border:1.5px solid rgba(220,38,38,.2);margin-top:14px;
+  font-size:14px;color:#dc2626;
+}
+
+/* ════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════ */
+#contact{background:var(--navy);}
+#contact .sec-label{color:var(--gold3);}
+#contact .sec-title{color:#fff;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:8px;}
+.cc{
+  background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:26px 22px;text-align:center;transition:.25s;
+}
+.cc:hover{background:rgba(255,255,255,.1);transform:translateY(-3px);}
+.cc-ico{font-size:30px;margin-bottom:12px;}
+.cc-lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold2);margin-bottom:7px;font-weight:600;}
+.cc-val{font-size:16px;font-weight:700;color:#fff;}
+.cc-val a{color:#fff;transition:.2s;}
+.cc-val a:hover{color:var(--gold2);}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;border-radius:12px;
+  padding:14px 28px;font-weight:700;font-size:15px;
+  margin-top:32px;transition:.25s;border:none;cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.wa-btn:hover{background:#128C7E;transform:translateY(-2px);}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer{
+  background:#050e22;
+  padding:28px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+  border-top:1.5px solid rgba(196,136,58,.2);
+}
+.f-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;}
+.f-brand em{color:var(--gold2);font-style:normal;}
+.f-links{display:flex;gap:18px;flex-wrap:wrap;}
+.f-links a{color:rgba(255,255,255,.38);font-size:13px;transition:.2s;}
+.f-links a:hover{color:var(--gold2);}
+.f-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.disc-bar{background:#030a16;padding:14px 5%;text-align:center;}
+.disc-bar p{font-size:11.5px;color:rgba(255,255,255,.22);line-height:1.65;max-width:820px;margin:0 auto;}
+
+/* ════════════════════════════════════════
+   CHATBOT
+════════════════════════════════════════ */
+#chatBtn{
+  position:fixed;bottom:28px;right:28px;z-index:9000;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  border:none;cursor:pointer;font-size:24px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(196,136,58,.55);
+  transition:.3s;
+}
+#chatBtn:hover{transform:scale(1.12);}
+#chatWrap{
+  position:fixed;bottom:100px;right:28px;z-index:9000;
+  width:360px;
+  background:#fff;border-radius:20px;
+  box-shadow:0 24px 72px rgba(11,25,54,.25);
+  display:none;flex-direction:column;overflow:hidden;
+  border:1.5px solid rgba(196,136,58,.2);
+  max-height:540px;
+}
+#chatWrap.open{display:flex;}
+.ch-head{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  padding:15px 18px;display:flex;align-items:center;gap:12px;
+}
+.ch-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ch-hinfo h4{font-weight:700;color:#fff;font-size:14.5px;margin-bottom:1px;}
+.ch-hinfo p{font-size:11px;color:rgba(255,255,255,.55);}
+.online{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ade80;margin-right:4px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.ch-x{margin-left:auto;background:rgba(255,255,255,.1);border:none;width:28px;height:28px;border-radius:7px;cursor:pointer;color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.ch-x:hover{background:rgba(255,255,255,.2);}
+.ch-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:11px;max-height:330px;}
+.ch-msgs::-webkit-scrollbar{width:3px;}
+.ch-msgs::-webkit-scrollbar-thumb{background:var(--light);}
+.cmsg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:13.5px;line-height:1.58;}
+.cmsg.bot{background:var(--light);color:var(--navy);border-bottom-left-radius:4px;align-self:flex-start;}
+.cmsg.user{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-bottom-right-radius:4px;align-self:flex-end;}
+.ch-quick{padding:8px 14px;display:flex;gap:7px;flex-wrap:wrap;border-top:1px solid var(--light);}
+.qbtn{background:var(--cream);border:1.5px solid var(--border);border-radius:50px;padding:5px 12px;font-size:11.5px;cursor:pointer;color:var(--navy);font-weight:600;transition:.2s;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;}
+.qbtn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+.ch-inp{padding:12px 14px;border-top:1.5px solid var(--light);display:flex;gap:8px;}
+.ch-input{flex:1;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;outline:none;background:#fafbfd;}
+.ch-input:focus{border-color:var(--gold);}
+.ch-send{background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;}
+.ch-send:hover{opacity:.85;}
+.ch-typing{display:flex;gap:5px;padding:10px 14px;align-items:center;background:var(--light);border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;}
+.ch-typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:tp .8s infinite;}
+.ch-typing span:nth-child(2){animation-delay:.15s;}
+.ch-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes tp{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-5px);}}
+
+/* ════════════════════════════════════════
+   TOAST
+════════════════════════════════════════ */
+#toast{
+  position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(60px);
+  background:var(--navy);color:#fff;
+  padding:11px 22px;border-radius:10px;
+  font-size:14px;z-index:99999;opacity:0;
+  transition:.35s;border-left:4px solid var(--gold);
+  white-space:nowrap;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ════════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:.75s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:920px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .pay-grid{grid-template-columns:1fr;}
+  .proc-connector{display:none;}
+  .proc-step{flex:0 0 45%;}
+  #chatWrap{width:calc(100vw - 32px);right:16px;bottom:90px;}
+}
+@media(max-width:600px){
+  .fg{grid-template-columns:1fr;}
+  .f.full{grid-column:1;}
+  .form-card{padding:26px 18px;}
+  .proc-step{flex:0 0 100%;}
+  .hero-stats{gap:24px;}
+  #chatBtn{right:16px;bottom:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ═══════════════════════════════════════════════ -->
+<nav id="nav">
+  <a class="brand" href="#hero">Academic<em>Writing</em></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#payment">Payment</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#order" class="nav-cta">Get Quote →</a></li>
+  </ul>
+  <div class="hamburger" id="hbg" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#why" onclick="toggleMenu()">Why Us</a>
+  <a href="#process" onclick="toggleMenu()">Process</a>
+  <a href="#payment" onclick="toggleMenu()">Payment</a>
+  <a href="#order" onclick="toggleMenu()">Order Now</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-pill">✦ India's Trusted Academic Partner</div>
+    <h1>Expert <em>Academic Writing</em><br>for Scholars &amp; Researchers</h1>
+    <p class="hero-sub">High-quality thesis, dissertations, research papers, journals &amp; presentations — crafted by Ph.D.-level experts. Turnitin-certified, 100% confidential, on-time delivery guaranteed.</p>
+    <div class="hero-ctas">
+      <a href="#order" class="btn btn-gold">📝 Place Your Order</a>
+      <a href="#pricing" class="btn btn-ghost">💰 View Pricing</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">500+</div><div class="hstat-label">Projects Delivered</div></div>
+      <div><div class="hstat-num">2–3%</div><div class="hstat-label">Plagiarism Max</div></div>
+      <div><div class="hstat-num">100%</div><div class="hstat-label">Confidential</div></div>
+      <div><div class="hstat-num">24/7</div><div class="hstat-label">Support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══════════════════════════════════════════ -->
+<section id="services" class="sec">
+  <div class="reveal">
+    <div class="sec-label">What We Offer</div>
+    <div class="sec-title">Academic Writing Services</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub">Comprehensive support for UG, PG, Ph.D., and Post-Doc scholars across every discipline.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal reveal-d1">
+      <div class="svc-icon">📚</div>
+      <div class="svc-name">Thesis &amp; Dissertation</div>
+      <div class="svc-desc">Full writing — introduction to conclusion, proper chapter structure, references &amp; literature review.</div>
+      <div class="svc-price"><sup>₹</sup>6,000</div>
+      <div class="svc-note">50–60 pages · ₹8,000 for 60–100 pages</div>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <div class="svc-icon">🔬</div>
+      <div class="svc-name">Research Paper</div>
+      <div class="svc-desc">Journal-format papers for IJCRT, Springer, Elsevier, IEEE — formatted exactly per target journal.</div>
+      <div class="svc-price"><sup>₹</sup>2,000</div>
+      <div class="svc-note">As per journal specifications</div>
+    </div>
+    <div class="svc-card reveal reveal-d3">
+      <div class="svc-icon">📊</div>
+      <div class="svc-name">Presentation (PPT)</div>
+      <div class="svc-desc">Professional academic presentations with visual appeal, data charts &amp; clear narrative.</div>
+      <div class="svc-price"><sup>₹</sup>500</div>
+      <div class="svc-note">Includes 2 free revision rounds</div>
+    </div>
+    <div class="svc-card reveal reveal-d1">
+      <div class="svc-icon">📖</div>
+      <div class="svc-name">Review / Survey Paper</div>
+      <div class="svc-desc">Comprehensive literature reviews and survey papers with systematic methodology &amp; citations.</div>
+      <div class="svc-price"><sup>₹</sup>2,000</div>
+      <div class="svc-note">Literature review included</div>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <div class="svc-icon">📋</div>
+      <div class="svc-name">Plagiarism Report</div>
+      <div class="svc-desc">Official Turnitin or iThenticate reports — full similarity check with detailed report.</div>
+      <div class="svc-price"><sup>₹</sup>200</div>
+      <div class="svc-note">Onwards · Turnitin / iThenticate</div>
+    </div>
+    <div class="svc-card reveal reveal-d3">
+      <div class="svc-icon">✍️</div>
+      <div class="svc-name">Editing &amp; Proofreading</div>
+      <div class="svc-desc">Grammar, structure, citation formatting &amp; language refinement for existing documents.</div>
+      <div class="svc-price"><sup>₹</sup>500</div>
+      <div class="svc-note">Price varies by document length</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ════════════════════════════════════════════ -->
+<section id="pricing" class="sec">
+  <div class="reveal tc">
+    <div class="sec-label">Transparent Pricing</div>
+    <div class="sec-title">All Services at a Glance</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub">No hidden fees. No surprises. Pay only for what you need.</p>
+  </div>
+  <div class="reveal" style="overflow-x:auto;">
+    <table class="ptable">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Scope</th>
+          <th>Delivery</th>
+          <th style="text-align:right;">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Thesis / Dissertation Writing</strong></td><td>50–60 pages, full structure</td><td>7–15 days</td><td>₹6,000</td></tr>
+        <tr><td><strong>Thesis / Dissertation Writing</strong><span class="pbadge">Popular</span></td><td>60–100 pages, all chapters</td><td>10–20 days</td><td>₹8,000</td></tr>
+        <tr><td><strong>Research Paper (Journal)</strong></td><td>IJCRT, Springer, Elsevier, IEEE</td><td>3–7 days</td><td>₹2,000</td></tr>
+        <tr><td><strong>Review / Survey Paper</strong></td><td>Literature review + methodology</td><td>5–10 days</td><td>₹2,000</td></tr>
+        <tr><td><strong>Presentation (PPT)</strong></td><td>2 free revisions included</td><td>1–3 days</td><td>₹500</td></tr>
+        <tr><td><strong>Plagiarism Report</strong></td><td>Turnitin / iThenticate</td><td>Same day</td><td class="gold-price">₹200 onwards</td></tr>
+        <tr><td><strong>Editing &amp; Proofreading</strong></td><td>Grammar, structure, citations</td><td>2–5 days</td><td class="gold-price">₹500 onwards</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align:center;margin-top:30px;" class="reveal">
+    <a href="#order" class="btn btn-gold">📝 Place Your Order Now</a>
+  </div>
+</section>
+
+<!-- ══ WHY US ══════════════════════════════════════════════ -->
+<section id="why" class="sec">
+  <div class="reveal">
+    <div class="sec-label">Our Advantages</div>
+    <div class="sec-title">Why Choose AcademicWriting?</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub">Quality, confidentiality and expertise — at every step of your academic journey.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal reveal-d1"><div class="why-icon">✍️</div><div class="why-text"><h4>Expert Academic Writers</h4><p>All content by M.Sc./Ph.D. level subject-matter experts across all disciplines.</p></div></div>
+    <div class="why-card reveal reveal-d2"><div class="why-icon">🔒</div><div class="why-text"><h4>100% Confidential</h4><p>Your details &amp; documents are never shared with any third party — guaranteed.</p></div></div>
+    <div class="why-card reveal reveal-d3"><div class="why-icon">📋</div><div class="why-text"><h4>Low Plagiarism (2–3%)</h4><p>All work passes UGC, Turnitin, Unicheck. Plagiarism report provided with every order.</p></div></div>
+    <div class="why-card reveal reveal-d1"><div class="why-icon">🏆</div><div class="why-text"><h4>Journal-Specific Formatting</h4><p>Exact formatting for IJCRT, Springer, Elsevier, IEEE and your specific target journal.</p></div></div>
+    <div class="why-card reveal reveal-d2"><div class="why-icon">⚡</div><div class="why-text"><h4>On-Time Delivery</h4><p>Deadlines are sacred. We deliver on or before the agreed date, every single time.</p></div></div>
+    <div class="why-card reveal reveal-d3"><div class="why-icon">🔄</div><div class="why-text"><h4>Free Revisions</h4><p>PPTs include 2 free rounds. All services include post-delivery support for corrections.</p></div></div>
+    <div class="why-card reveal reveal-d1"><div class="why-icon">📄</div><div class="why-text"><h4>All Formats Supported</h4><p>DOCX, PDF, LaTeX — whatever format your institution or journal requires.</p></div></div>
+    <div class="why-card reveal reveal-d2"><div class="why-icon">🎓</div><div class="why-text"><h4>All Academic Levels</h4><p>UG, PG, Ph.D., and Post-Doctoral work handled with equal care and expertise.</p></div></div>
+    <div class="why-card reveal reveal-d3"><div class="why-icon">🌐</div><div class="why-text"><h4>All Subjects</h4><p>Science, Arts, Commerce, Law, Engineering, Medical, Management and more.</p></div></div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════════ -->
+<section id="process" class="sec">
+  <div class="reveal tc">
+    <div class="sec-label">How It Works</div>
+    <div class="sec-title" style="color:#fff;">Simple 5-Step Process</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub" style="color:rgba(255,255,255,.6)">From requirement to delivery — completely hassle-free.</p>
+  </div>
+  <div class="proc-row reveal">
+    <div class="proc-connector"></div>
+    <div class="proc-step"><div class="proc-num">1</div><div class="proc-title">Share Requirements</div><div class="proc-desc">Topic, pages, journal, deadline</div></div>
+    <div class="proc-step"><div class="proc-num">2</div><div class="proc-title">Get Quote</div><div class="proc-desc">Instant pricing, no hidden fees</div></div>
+    <div class="proc-step"><div class="proc-num">3</div><div class="proc-title">Confirm Payment</div><div class="proc-desc">Secure UPI advance payment</div></div>
+    <div class="proc-step"><div class="proc-num">4</div><div class="proc-title">Writing Begins</div><div class="proc-desc">Expert assigned to your project</div></div>
+    <div class="proc-step"><div class="proc-num">5</div><div class="proc-title">Receive Document</div><div class="proc-desc">On-time delivery + plagiarism report</div></div>
+  </div>
+</section>
+
+<!-- ══ PAYMENT ════════════════════════════════════════════ -->
+<section id="payment" class="sec">
+  <div class="reveal">
+    <div class="sec-label">Secure Payments</div>
+    <div class="sec-title">Pay via UPI — Fast &amp; Safe</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub">All major UPI apps accepted. Scan the QR code or pay directly using the UPI ID below.</p>
+  </div>
+  <div class="pay-grid">
+    <div class="pay-info reveal">
+      <h3>Payment Instructions</h3>
+      <p>All payments are collected securely via UPI before work begins. Advance payment ensures priority handling and dedicated writer assignment for your project.</p>
+      <div class="upi-box">
+        <div>
+          <div class="upi-box-label">UPI ID</div>
+          <div class="upi-box-id" id="upiId">7557737223-4@ybl</div>
+        </div>
+        <button class="copy-btn" onclick="copyUPI()">📋 Copy UPI ID</button>
+      </div>
+      <ul class="pay-steps">
+        <li data-n="1">Open any UPI app (PhonePe, GPay, Paytm, BHIM)</li>
+        <li data-n="2">Tap "Send Money" or "Pay" and enter the UPI ID</li>
+        <li data-n="3">Enter the amount as quoted for your service</li>
+        <li data-n="4">Complete payment &amp; take a screenshot</li>
+        <li data-n="5">Share screenshot on WhatsApp: +91 7557737223</li>
+        <li data-n="6">Work begins within 2 hours of payment confirmation!</li>
+      </ul>
+      <div style="background:rgba(196,136,58,.08);border:1.5px solid rgba(196,136,58,.25);border-radius:10px;padding:14px 18px;">
+        <p style="font-size:13px;color:var(--muted);">💡 <strong style="color:var(--navy);">Important:</strong> Always save your payment screenshot and share it on WhatsApp or email for instant project initiation.</p>
+      </div>
+    </div>
+    <div class="qr-panel reveal">
+      <div class="qr-card">
+        <h4>Scan to Pay</h4>
+        <p>Use any UPI app to scan this QR code</p>
+        <div id="qr-loader">⏳ Loading QR…</div>
+        <img id="qr-img" src="" alt="UPI QR Code" style="display:none;">
+        <div style="margin-top:12px;font-size:14px;font-weight:700;color:var(--navy);">7557737223-4@ybl</div>
+        <div style="margin-top:3px;font-size:12px;color:var(--muted);">AcademicWriting Services</div>
+        <div class="upi-apps">
+          <span class="upi-app">📱 PhonePe</span>
+          <span class="upi-app">💳 Google Pay</span>
+          <span class="upi-app">🏦 Paytm</span>
+          <span class="upi-app">🔵 BHIM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORDER FORM ══════════════════════════════════════════ -->
+<section id="order" class="sec">
+  <div class="reveal tc">
+    <div class="sec-label">Get Started</div>
+    <div class="sec-title">Place Your Order</div>
+    <div class="sec-bar"></div>
+    <p class="sec-sub">Fill in your requirements and we'll respond with a quote within the hour.</p>
+  </div>
+  <div class="form-card reveal">
+    <div class="fg" id="formFields">
+      <div class="f"><label>Full Name *</label><input type="text" id="fname" placeholder="Your full name"></div>
+      <div class="f"><label>WhatsApp / Phone *</label><input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="f"><label>Email Address *</label><input type="email" id="femail" placeholder="your@email.com"></div>
+      <div class="f">
+        <label>Service Required *</label>
+        <select id="fservice">
+          <option value="">— Select Service —</option>
+          <option>Thesis / Dissertation (50–60 pages) — ₹6,000</option>
+          <option>Thesis / Dissertation (60–100 pages) — ₹8,000</option>
+          <option>Research Paper (Journal Format) — ₹2,000</option>
+          <option>Review / Survey Paper — ₹2,000</option>
+          <option>Presentation (PPT) — ₹500</option>
+          <option>Plagiarism Report — from ₹200</option>
+          <option>Editing &amp; Proofreading — from ₹500</option>
+        </select>
+      </div>
+      <div class="f"><label>Subject / Discipline *</label><input type="text" id="fsubject" placeholder="e.g. Computer Science, MBA, Law"></div>
+      <div class="f">
+        <label>Academic Level</label>
+        <select id="flevel">
+          <option value="">— Select Level —</option>
+          <option>Undergraduate (UG)</option>
+          <option>Postgraduate (PG / M.Tech / MBA)</option>
+          <option>Ph.D.</option>
+          <option>Post-Doctoral</option>
+        </select>
+      </div>
+      <div class="f"><label>Number of Pages</label><input type="number" id="fpages" placeholder="Estimated pages" min="1"></div>
+      <div class="f"><label>Deadline *</label><input type="date" id="fdeadline"></div>
+      <div class="f full"><label>Topic / Title (if available)</label><input type="text" id="ftopic" placeholder="Your research topic or dissertation title"></div>
+      <div class="f full"><label>Additional Requirements</label><textarea id="fnotes" placeholder="Journal name, formatting style, reference style, special instructions…"></textarea></div>
+    </div>
+    <button class="form-btn" id="formBtn" onclick="submitOrder()">🚀 Submit Order Request</button>
+    <div class="form-error" id="formErr"></div>
+    <div class="form-success" id="formOk">
+      <div class="fs-icon">✅</div>
+      <h4>Order Request Received!</h4>
+      <p>Thank you! Our team will contact you on <strong>WhatsApp/Email within 1 hour</strong> with your quote and project details.</p>
+      <p style="margin-top:10px;">For urgent queries: <strong>+91 7557737223</strong></p>
+      <p style="margin-top:8px;font-size:12.5px;color:#9ca3af;">Order ID: <span id="orderId"></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<section id="contact" class="sec">
+  <div class="reveal">
+    <div class="sec-label">Reach Us</div>
+    <div class="sec-title">Contact AcademicWriting</div>
+    <div class="sec-bar"></div>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="cc"><div class="cc-ico">📱</div><div class="cc-lbl">WhatsApp / Call</div><div class="cc-val"><a href="https://wa.me/917557737223" target="_blank">+91 7557737223</a></div></div>
+    <div class="cc"><div class="cc-ico">✉️</div><div class="cc-lbl">Email</div><div class="cc-val"><a href="mailto:academicwriting@gmail.com">academicwriting<br>@gmail.com</a></div></div>
+    <div class="cc"><div class="cc-ico">⏰</div><div class="cc-lbl">Support Hours</div><div class="cc-val">24 / 7 Available</div></div>
+    <div class="cc"><div class="cc-ico">💬</div><div class="cc-lbl">Live Chat</div><div class="cc-val">Writing Help Bot</div></div>
+  </div>
+  <div style="text-align:center;margin-top:10px;" class="reveal">
+    <a href="https://wa.me/917557737223" target="_blank" class="wa-btn">
+      <span style="font-size:20px;">💬</span> Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════ -->
+<footer>
+  <div class="f-brand">Academic<em>Writing</em></div>
+  <div class="f-links">
+    <a href="#services">Services</a><a href="#pricing">Pricing</a>
+    <a href="#payment">Payment</a><a href="#order">Order</a><a href="#contact">Contact</a>
+  </div>
+  <div class="f-copy">© 2025 AcademicWriting Services. All rights reserved.</div>
+</footer>
+<div class="disc-bar">
+  <p>All services are provided for educational and reference purposes only. Content is intended as academic guidance material. Users are responsible for ensuring compliance with their institution's academic integrity policy.</p>
+</div>
+
+<!-- ══ CHATBOT ════════════════════════════════════════════ -->
+<button id="chatBtn" onclick="toggleChat()" title="Writing Help Bot">✍️</button>
+<div id="chatWrap">
+  <div class="ch-head">
+    <div class="ch-av">📝</div>
+    <div class="ch-hinfo">
+      <h4>Writing Help Bot</h4>
+      <p><span class="online"></span>Online · AcademicWriting Support</p>
+    </div>
+    <button class="ch-x" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="ch-msgs" id="chMsgs"></div>
+  <div class="ch-quick" id="chQuick">
+    <button class="qbtn" onclick="qSend('What services do you offer?')">Services</button>
+    <button class="qbtn" onclick="qSend('What are your prices?')">Pricing</button>
+    <button class="qbtn" onclick="qSend('How do I pay?')">Payment</button>
+    <button class="qbtn" onclick="qSend('How long does it take?')">Deadline</button>
+    <button class="qbtn" onclick="qSend('Is my data confidential?')">Privacy</button>
+  </div>
+  <div class="ch-inp">
+    <input class="ch-input" id="chInput" placeholder="Ask about our services…" onkeydown="if(event.key==='Enter')sendMsg()">
+    <button class="ch-send" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<!-- ══ TOAST ══════════════════════════════════════════════ -->
+<div id="toast"></div>
+
+<script>
+'use strict';
+
+// ── NAV scroll effect ──────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+});
+
+// ── Mobile menu ────────────────────────────────────────────
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.addEventListener('click', e=>{
+  if(!e.target.closest('#nav')&&!e.target.closest('#mobileMenu')){
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+});
+
+// ── Scroll reveal ──────────────────────────────────────────
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ── Fetch QR from backend ──────────────────────────────────
+async function loadQR(){
+  try{
+    const r = await fetch('/api/qr');
+    const d = await r.json();
+    if(d.success && d.qr){
+      const img = document.getElementById('qr-img');
+      const loader = document.getElementById('qr-loader');
+      img.src = d.qr;
+      img.style.display = 'block';
+      loader.style.display = 'none';
+    }
+  }catch(e){
+    document.getElementById('qr-loader').textContent = 'UPI: 7557737223-4@ybl';
+  }
+}
+loadQR();
+
+// ── Copy UPI ID ────────────────────────────────────────────
+function copyUPI(){
+  navigator.clipboard.writeText('7557737223-4@ybl').then(()=>{
+    toast('✅ UPI ID copied!');
+  }).catch(()=>toast('UPI ID: 7557737223-4@ybl'));
+}
+
+// ── Order Form ─────────────────────────────────────────────
+async function submitOrder(){
+  const get = id => document.getElementById(id).value.trim();
+  const name=get('fname'), phone=get('fphone'), email=get('femail'),
+        service=get('fservice'), subject=get('fsubject'), deadline=get('fdeadline');
+
+  const errEl = document.getElementById('formErr');
+  errEl.style.display='none';
+
+  if(!name||!phone||!email||!service||!subject||!deadline){
+    errEl.textContent='⚠️ Please fill in all required fields marked with *';
+    errEl.style.display='block';
+    errEl.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  // Basic email check
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent='⚠️ Please enter a valid email address.';
+    errEl.style.display='block';
+    return;
+  }
+
+  const btn = document.getElementById('formBtn');
+  btn.disabled=true;
+  btn.textContent='⏳ Submitting…';
+
+  const payload = {
+    name, phone, email, service, subject,
+    level: get('flevel'),
+    pages: get('fpages'),
+    deadline,
+    topic: get('ftopic'),
+    notes: get('fnotes')
+  };
+
+  try{
+    const r = await fetch('/api/orders',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const d = await r.json();
+    if(d.success){
+      document.getElementById('orderId').textContent = d.orderId;
+      document.getElementById('formOk').style.display='block';
+      btn.style.display='none';
+      document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'center'});
+      toast('✅ Order submitted successfully!');
+    } else {
+      throw new Error(d.error||'Server error');
+    }
+  }catch(err){
+    btn.disabled=false;
+    btn.textContent='🚀 Submit Order Request';
+    errEl.textContent='❌ Submission failed: '+err.message+'. Please WhatsApp us at +91 7557737223';
+    errEl.style.display='block';
+  }
+}
+
+// ── Toast ──────────────────────────────────────────────────
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ══════════════════════════════════════════════════════════
+//  CHATBOT — calls /api/chat on YOUR server
+// ══════════════════════════════════════════════════════════
+let chatOpen = false;
+let chatHistory = []; // multi-turn conversation
+
+function toggleChat(){
+  chatOpen = !chatOpen;
+  document.getElementById('chatWrap').classList.toggle('open',chatOpen);
+  if(chatOpen && chatHistory.length===0) initChat();
+  if(chatOpen) document.getElementById('chInput').focus();
+}
+
+function initChat(){
+  addBot("👋 Hi! I'm **Writing Help Bot** — your guide to AcademicWriting Services.\n\nI can help you with queries about our thesis, research papers, presentations, pricing, payment, and more. What would you like to know?");
+}
+
+function addBot(text){
+  const el = document.getElementById('chMsgs');
+  const d = document.createElement('div');
+  d.className = 'cmsg bot';
+  d.innerHTML = text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+  el.appendChild(d);
+  el.scrollTop = el.scrollHeight;
+}
+
+function addUser(text){
+  const el = document.getElementById('chMsgs');
+  const d = document.createElement('div');
+  d.className = 'cmsg user';
+  d.textContent = text;
+  el.appendChild(d);
+  el.scrollTop = el.scrollHeight;
+}
+
+function showTyping(){
+  const el = document.getElementById('chMsgs');
+  const d = document.createElement('div');
+  d.id = 'typingEl';
+  d.className = 'ch-typing';
+  d.innerHTML = '<span></span><span></span><span></span>';
+  el.appendChild(d);
+  el.scrollTop = el.scrollHeight;
+}
+function removeTyping(){
+  const t = document.getElementById('typingEl');
+  if(t) t.remove();
+}
+
+function qSend(text){
+  document.getElementById('chInput').value = text;
+  sendMsg();
+}
+
+async function sendMsg(){
+  const inp = document.getElementById('chInput');
+  const text = inp.value.trim();
+  if(!text) return;
+
+  addUser(text);
+  inp.value='';
+
+  // Add to history
+  chatHistory.push({ role:'user', content: text });
+  if(chatHistory.length > 20) chatHistory = chatHistory.slice(-20);
+
+  showTyping();
+
+  try{
+    const r = await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ messages: chatHistory })
+    });
+
+    if(!r.ok){
+      const errData = await r.json().catch(()=>({}));
+      throw new Error(errData.error || `HTTP ${r.status}`);
+    }
+
+    const d = await r.json();
+    removeTyping();
+
+    const reply = d.message || "Sorry, I didn't get a response. Please WhatsApp us at +91 7557737223.";
+    chatHistory.push({ role:'assistant', content: reply });
+    addBot(reply);
+
+  }catch(err){
+    removeTyping();
+    const fallback = "I'm having a little trouble right now. Please WhatsApp us directly at **+91 7557737223** — we respond within minutes! 🙏";
+    chatHistory.push({ role:'assistant', content: fallback });
+    addBot(fallback);
+    console.error('Chat error:', err.message);
+  }
+}
+
+// ── Set min date to today on deadline picker ───────────────
+window.addEventListener('load',()=>{
+  const dl = document.getElementById('fdeadline');
+  if(dl) dl.min = new Date().toISOString().split('T')[0];
+});
+</script>
+</body>
+</html>
